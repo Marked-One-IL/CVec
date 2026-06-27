@@ -32,7 +32,7 @@ static void        Vec_##name##_erase     (Vec_##name* self, size_t index); \
 static void        Vec_##name##_eraseN    (Vec_##name* self, size_t index, size_t n); \
 \
 static bool  Vec_##name##_Internal_overlapPtr    (const Vec_##name* self, const type* p); \
-static type* Vec_##name##_Internal_duplicateArr  (type* arr, size_t length); \
+static type* Vec_##name##_Internal_duplicateArr  (const type* arr, size_t length); \
 \
 static Vec_##name Vec_##name##_init(void) \
 { \
