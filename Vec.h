@@ -193,7 +193,7 @@ static bool Vec_##name##_Internal_overlapPtr(const Vec_##name *self, const type 
 static type* Vec_##name##_Internal_duplicateArr(const type *arr, size_t length) \
 { assert(arr); \
 \
-	type* buffer = (type*)malloc(length * sizeof(type)); assert(buffer); \
+	type *buffer = (type*)malloc(length * sizeof(type)); assert(buffer); \
 	memcpy(buffer, arr, length * sizeof(type)); \
 	return buffer; \
 }
