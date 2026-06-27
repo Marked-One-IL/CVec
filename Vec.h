@@ -18,21 +18,21 @@ typedef struct Vec_##name Vec_##name; \
 static Vec_##name  Vec_##name##_init      (void); \
 static Vec_##name  Vec_##name##_initArr   (const type* arr, size_t length); \
 static Vec_##name  Vec_##name##_initVec   (const Vec_##name* other); \
-static void Vec_##name##_free             (Vec_##name* self); \
-static void Vec_##name##_reserve          (Vec_##name* self, size_t capacity); \
-static void Vec_##name##_push             (Vec_##name* self, type v); \
-static void Vec_##name##_pushArr          (Vec_##name* self, const type* arr, size_t length); \
-static void Vec_##name##_pushVec          (Vec_##name* self, const Vec_##name* other); \
-static void Vec_##name##_pop              (Vec_##name* self); \
-static void Vec_##name##_popN             (Vec_##name* self, size_t n); \
-static void Vec_##name##_insert           (Vec_##name* self, size_t index, type v); \
-static void Vec_##name##_insertArr        (Vec_##name* self, size_t index, const type* arr, size_t length); \
-static void Vec_##name##_insertVec        (Vec_##name* self, size_t index, const Vec_##name* other); \
-static void Vec_##name##_erase            (Vec_##name* self, size_t index); \
-static void Vec_##name##_eraseN           (Vec_##name* self, size_t index, size_t n); \
+static void        Vec_##name##_free      (Vec_##name* self); \
+static void        Vec_##name##_reserve   (Vec_##name* self, size_t capacity); \
+static void        Vec_##name##_push      (Vec_##name* self, type v); \
+static void        Vec_##name##_pushArr   (Vec_##name* self, const type* arr, size_t length); \
+static void        Vec_##name##_pushVec   (Vec_##name* self, const Vec_##name* other); \
+static void        Vec_##name##_pop       (Vec_##name* self); \
+static void        Vec_##name##_popN      (Vec_##name* self, size_t n); \
+static void        Vec_##name##_insert    (Vec_##name* self, size_t index, type v); \
+static void        Vec_##name##_insertArr (Vec_##name* self, size_t index, const type* arr, size_t length); \
+static void        Vec_##name##_insertVec (Vec_##name* self, size_t index, const Vec_##name* other); \
+static void        Vec_##name##_erase     (Vec_##name* self, size_t index); \
+static void        Vec_##name##_eraseN    (Vec_##name* self, size_t index, size_t n); \
 \
-static bool Vec_##name##_Internal_overlapPtr    (const Vec_##name* self, const type* p); \
-static type* Vec_##name##_Internal_duplicateArr (type* arr, size_t length); \
+static bool  Vec_##name##_Internal_overlapPtr    (const Vec_##name* self, const type* p); \
+static type* Vec_##name##_Internal_duplicateArr  (type* arr, size_t length); \
 \
 static Vec_##name Vec_##name##_init(void) \
 { \
