@@ -1,6 +1,6 @@
 # CVec
 std::vector but for C<br>
-This library is full templated via macros<br>
+This library is fully templated via macros<br>
 No void* and casting hacks<br>
 
 ![pic](assets/pic.jpg)<br>
