@@ -1,29 +1,44 @@
 #include <stdio.h>
 #include "Vec.h"
 
-DEFINE_VEC(int, int)
-DEFINE_VEC(Vec_int, DDVec)
+DEFINE_VEC_HEADER(int, int)
+DEFINE_VEC_SOURCE(int, int)
+DEFINE_VEC_HEADER(Vec_int, intVec)
+DEFINE_VEC_SOURCE(Vec_int, intVec)
+
+#define LENGTH 10
 
 int main()
 {
-	Vec_DDVec dd = Vec_DDVec_init();
+	// Init
+	Vec_intVec intVec = Vec_intVec_init();
+	for (size_t i = 0; i < LENGTH; i++)
+	{
+		Vec_int vInt = Vec_int_init();
 
-	for (int i = 1; i <= 10; i++)
-	{
-		Vec_int v = Vec_int_init();
-		Vec_int_push(&v, i);
-		Vec_DDVec_push(&dd, v);
-	}
-	Vec_DDVec_eraseN(&dd, 1, 2);
-	for (int i = 0; i < dd.length; i++)
-	{
-		printf("%d ", dd.buffer[i].buffer[0]);
+		for (size_t j = 0; j < LENGTH; j++)
+		{
+			Vec_int_push(&vInt, i + j);
+		}
+
+		Vec_intVec_push(&intVec, vInt);
 	}
 
-	for (int i = 0; i < dd.length; i++)
+	// Use + Free
+	for (size_t i = 0; i < intVec.length; i++)
 	{
-		Vec_int_free(&dd.buffer[i]);
+		Vec_int v1 = intVec.buffer[i];
+
+		for (size_t j = 0; j < v1.length; j++)
+		{
+			int v2 = v1.buffer[j];
+			printf("%d ", v2);
+		}
+		printf("\n");
+
+		Vec_int_free(&v1);
 	}
-	Vec_DDVec_free(&dd);
+
+	Vec_intVec_free(&intVec);
 	return 0;
 }
