@@ -1,5 +1,5 @@
-#ifndef LIB_CVEC_H
-#define LIB_CVEC_H
+#ifndef CVEC_VEC_H
+#define CVEC_VEC_H
 // https://github.com/Marked-One-IL/CVec.git
 #include <stdlib.h>
 #include <string.h>
@@ -227,4 +227,4 @@ void Vec_##name##_eraseN(Vec_##name *self, size_t index, size_t n) \
     self->length -= n; \
 }
 
-#endif // VEC_H
+#endif // CVEC_VEC_H
